@@ -7,8 +7,8 @@ public class ProductRepo {
 
     HashMap<String, Product> productsRepo;
 
-    public ProductRepo(HashMap<String, Product> productsRepo) {
-        this.productsRepo = productsRepo;
+    public ProductRepo() {
+        this.productsRepo = new HashMap<>();
     }
 
     public HashMap<String, Product> getProductsRepo() {
@@ -33,5 +33,23 @@ public class ProductRepo {
         return "ProductRepo{" +
                 "productsRepo=" + productsRepo +
                 '}';
+    }
+
+    public String list(){
+        String list = "Produktliste: ";
+        for (String key: this.productsRepo.keySet()) {
+            list += "\nName: " + productsRepo.get(key).getName() + "\n ID: " + productsRepo.get(key).getId() + " ";
+        }
+        return list;
+
+    }
+
+    public String getProduct(String key){
+        String product = "ProduktID";
+        product +=  productsRepo.get(key).getId() + "\n Name: " + productsRepo.get(key).getName();
+        return product;
+    }
+    public void addProduct(Product product){
+        this.productsRepo.put(product.getId(), product);
     }
 }
