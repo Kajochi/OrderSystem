@@ -37,7 +37,7 @@ public class ProductRepo {
 
     public String list(){
         String list = "Produktliste: ";
-        if (this.productsRepo.get("01")==null){
+        if (this.productsRepo.isEmpty()){
             list = "Keine Produkte im Produktverzeichnis";
         }
         for (String key: this.productsRepo.keySet()) {
@@ -48,7 +48,7 @@ public class ProductRepo {
     }
 
     public String getProduct(String key){
-        String product = "ProduktID";
+        String product = "Produkt-ID: ";
         product +=  productsRepo.get(key).getId() + "\n Name: " + productsRepo.get(key).getName();
         return product;
 

@@ -6,11 +6,11 @@ import java.util.ArrayList;
 
 public class Order {
    private String id;
-     ArrayList<Product> products;
+     Product product;
 
-    public Order(String id, ArrayList<Product> products) {
+    public Order(String id, Product product) {
         this.id = id;
-        this.products = products;
+        this.product = product;
     }
 
     public String getId() {
