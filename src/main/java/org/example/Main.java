@@ -15,20 +15,20 @@ public class Main {
         Product product4 = new Product("04", "USB-C Adapter");
         Product product = new Product("01", "Kopfschmerztabletten");
 
-        ProductRepo productRepo = new ProductRepo();
 
+        ProductRepo productRepo = new ProductRepo();
        productRepo.addProduct(product1);
         productRepo.addProduct(product2);
         productRepo.addProduct(product3);
         productRepo.addProduct(product4);
         productRepo.addProduct(product);
-        System.out.println(productRepo.getProduct("01"));
-
-       /* ShopService shopService = new ShopService(productRepo, new OrderRepo());
 
 
+       ShopService shopService = new ShopService(productRepo, new OrderRepo());
 
-        System.out.println(shopService.listProducts());
+
+
+        System.out.println(shopService.getProduct("01"));
 
 
 
@@ -37,6 +37,6 @@ public class Main {
         shopService.addOrder(new Order("03", product2 ));
 
         System.out.println(shopService.getOrder("02"));
-        */
+
     }
 }
