@@ -2,11 +2,13 @@ package Orders;
 
 import Products.Product;
 
-public class Order {
-    String id;
-     Product products;
+import java.util.ArrayList;
 
-    public Order(String id, Product products) {
+public class Order {
+   private String id;
+     ArrayList<Product> products;
+
+    public Order(String id, ArrayList<Product> products) {
         this.id = id;
         this.products = products;
     }

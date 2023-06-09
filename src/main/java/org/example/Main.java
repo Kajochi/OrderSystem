@@ -1,8 +1,10 @@
 package org.example;
 
 
+import Orders.OrderRepo;
 import Products.Product;
 import Products.ProductRepo;
+import Shop.ShopService;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,13 +15,18 @@ public class Main {
 
         ProductRepo productRepo = new ProductRepo();
 
-        productRepo.addProduct(product1);
+       /* productRepo.addProduct(product1);
         productRepo.addProduct(product2);
         productRepo.addProduct(product3);
         productRepo.addProduct(product4);
 
+        ShopService shopService = new ShopService(productRepo, new OrderRepo());
+
+
+
+        System.out.println(shopService.listProducts());
+        */
         System.out.println(productRepo.list());
-        System.out.println(productRepo.getProduct("01"));
 
     }
 }

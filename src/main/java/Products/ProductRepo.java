@@ -37,8 +37,11 @@ public class ProductRepo {
 
     public String list(){
         String list = "Produktliste: ";
+        if (this.productsRepo.get("01")==null){
+            list = "Keine Produkte im Produktverzeichnis";
+        }
         for (String key: this.productsRepo.keySet()) {
-            list += "\nName: " + productsRepo.get(key).getName() + "\n ID: " + productsRepo.get(key).getId() + " ";
+            list += "\nProduktname: " + productsRepo.get(key).getName() + "\n Produkt-ID: " + productsRepo.get(key).getId() + " ";
         }
         return list;
 
@@ -48,6 +51,8 @@ public class ProductRepo {
         String product = "ProduktID";
         product +=  productsRepo.get(key).getId() + "\n Name: " + productsRepo.get(key).getName();
         return product;
+
+        //return this.productsRepo.get(key);
     }
     public void addProduct(Product product){
         this.productsRepo.put(product.getId(), product);

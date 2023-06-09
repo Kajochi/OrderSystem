@@ -2,6 +2,7 @@ package Shop;
 
 import Orders.Order;
 import Orders.OrderRepo;
+import Products.Product;
 import Products.ProductRepo;
 
 import java.util.Objects;
@@ -36,8 +37,26 @@ public class ShopService {
         return Objects.hash(getProductRepo(), getOrderRepo());
     }
 
+
+
+    public String getProduct(String key){
+        return this.productRepo.getProduct(key);
+    }
+
+    public String listProducts(){
+        return this.productRepo.list();
+    }
+
     public void addOrder(Order order){
-        this.orderRepo.addOrder(order);
+        this.orderRepo.add(order);
+    }
+
+    public String getOrder(String key){
+        return this.orderRepo.get(key);
+    }
+
+    public String listOrder(){
+        return this.orderRepo.list();
     }
 
 
